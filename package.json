@@ -4,7 +4,8 @@
   "description": "Web Application for Tormenta20",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,11 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.2",
-    "nodemon": "^2.0.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^12.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
