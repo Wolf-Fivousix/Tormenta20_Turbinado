@@ -1,4 +1,5 @@
 import React from 'react';
+import "../stylesheets/main_css"; 
 import { Route, Switch, withRouter } from 'react-router-dom';
 import MainPage from "./main_page";
 
