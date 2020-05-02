@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { createCreature } from "../actions/creature_actions";
 
 export default function MainPage(props) {
     const dispatch = useDispatch();
@@ -9,7 +10,11 @@ export default function MainPage(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // console.log(name);
+        const creature = {
+            name: name
+        };
+
+        dispatch(createCreature(creature));
         setName("");
     }
 
