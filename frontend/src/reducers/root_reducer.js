@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
+import { creatureReducer } from "./creatureReducer";
 
-
-const RootReducer = combineReducers({
-    
+const rootReducer = combineReducers({
+    creatures: creatureReducer
 });
 
-export default RootReducer;
+export default rootReducer;
