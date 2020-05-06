@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createCreature } from "../actions/creature_actions";
 
 export default function MainPage(props) {
     const dispatch = useDispatch();
+    const creatures = useSelector(state => state.creatures);
     const names = ["Wolf", "Diego", "Rex"];
     const namePlaceHolder = names[Math.floor(Math.random() * names.length )];
     const [name, setName] = useState("");
 
+    console.log(creatures);
+    
     function handleSubmit(e) {
         e.preventDefault();
         const creature = {
