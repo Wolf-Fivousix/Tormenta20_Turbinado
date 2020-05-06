@@ -9,12 +9,15 @@ export default function MainPage(props) {
     const namePlaceHolder = names[Math.floor(Math.random() * names.length )];
     const [name, setName] = useState("");
 
-    console.log(creatures);
-    
+    // console.log(Object.keys(creatures));
+
     function handleSubmit(e) {
         e.preventDefault();
         const creature = {
-            name: name
+
+            [Object.keys(creatures).length] : {
+                name: name
+            }
         };
 
         dispatch(createCreature(creature));
