@@ -1,7 +1,7 @@
-export const CREATE_CREATURE = "CREATE_CREATURE";
+export const RECEIVE_NEW_CREATURE = "RECEIVE_NEW_CREATURE";
 
 const receiveNewCreature = creature => ({
-    type: CREATE_CREATURE,
+    type: RECEIVE_NEW_CREATURE,
     creature
 });
 
