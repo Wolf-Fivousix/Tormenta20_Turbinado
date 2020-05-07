@@ -14,7 +14,12 @@ export default function MainPage(props) {
     function handleSubmit(e) {
         e.preventDefault();
         const creature = {
-
+            // So this right here is not working. Why?
+            // If I delete one of the creatures in the middle of the object, the next
+            // saved creature will overwrite the last one. Not good.
+            // I could, upon deletion, re-construct the array.... But then again, how will I know which 
+            // Creature I am deleting without an ID?
+            // Should I just create the database to store ID's? I thought I could do this with no DB whatsoever....
             [Object.keys(creatures).length] : {
                 name: name
             }
