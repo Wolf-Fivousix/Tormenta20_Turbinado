@@ -20,6 +20,10 @@ export default function MainPage(props) {
             // I could, upon deletion, re-construct the array.... But then again, how will I know which 
             // Creature I am deleting without an ID?
             // Should I just create the database to store ID's? I thought I could do this with no DB whatsoever....
+
+            // Better yet! Since all this logic is living in the component at the moment(page refresh erases it)
+            // let's make a counter that keeps track of the creature ID.
+            // Once the page is refreshed and all creatures disapear, the counter also resets!
             [Object.keys(creatures).length] : {
                 name: name
             }
