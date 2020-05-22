@@ -27,6 +27,9 @@ export default function MainPage(props) {
             [Object.keys(creatures).length] : {
                 name: name
             }
+
+            // Code snippet from a different project where there is an auto generation of ID based on the latest one:
+            const getNextId = () => _.parseInt( _.maxBy(Object.keys(notes), _.parseInt)) + 1;
         };
 
         dispatch(createCreature(creature));
