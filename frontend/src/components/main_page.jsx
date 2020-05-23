@@ -8,7 +8,7 @@ export default function MainPage(props) {
     const names = ["Wolf", "Diego", "Rex"];
     const namePlaceHolder = names[Math.floor(Math.random() * names.length )];
     const [name, setName] = useState("");
-
+    let creatureCounter = 0;
     // console.log(Object.keys(creatures));
 
     function handleSubmit(e) {
@@ -24,14 +24,18 @@ export default function MainPage(props) {
             // Better yet! Since all this logic is living in the component at the moment(page refresh erases it)
             // let's make a counter that keeps track of the creature ID.
             // Once the page is refreshed and all creatures disapear, the counter also resets!
-            [Object.keys(creatures).length] : {
-                name: name
-            }
+            // [Object.keys(creatures).length] : {
+            //     name: name
+            // }
 
             // Code snippet from a different project where there is an auto generation of ID based on the latest one:
-            const getNextId = () => _.parseInt( _.maxBy(Object.keys(notes), _.parseInt)) + 1;
-        };
+            // const getNextId = () => _.parseInt( _.maxBy(Object.keys(notes), _.parseInt)) + 1;
 
+            id: creatureCounter,
+            name: name,
+            pv: 0
+        };
+        
         dispatch(createCreature(creature));
         setName("");
     }
