@@ -23,7 +23,7 @@ const creatures = {
 };
 
 app.post("/creatures", (request, response) => {
-    console.log(request.query);
+    console.log(request.body);
     // const creature = request.query;
     response.json(creatures);
 });

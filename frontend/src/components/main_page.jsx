@@ -14,6 +14,8 @@ export default function MainPage(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        const creatureName = name || namePlaceHolder;
+
         const creature = {
             // So this right here is not working. Why?
             // If I delete one of the creatures in the middle of the object, the next
@@ -33,13 +35,16 @@ export default function MainPage(props) {
             // const getNextId = () => _.parseInt( _.maxBy(Object.keys(notes), _.parseInt)) + 1;
 
             id: creatureCounter,
-            name: name,
+            name: creatureName,
             pv: 0
         };
         
         // dispatch(createCreature(creature));
         axios.post("http://localhost:5000/creatures", creature)
-            .then(({ data }) => console.log(data));
+            .then(({ data }) => {
+                console.log(data, creatureCounter);
+                ++creatureCounter;
+            });
         setName("");
     }
 
