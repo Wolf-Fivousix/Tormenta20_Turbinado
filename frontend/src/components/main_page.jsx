@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createCreature } from "../actions/creature_actions";
+import axios from "axios";
 
 export default function MainPage(props) {
     const dispatch = useDispatch();
@@ -8,7 +9,7 @@ export default function MainPage(props) {
     const names = ["Wolf", "Diego", "Rex"];
     const namePlaceHolder = names[Math.floor(Math.random() * names.length )];
     const [name, setName] = useState("");
-    let creatureCounter = 0;
+    let creatureCounter = 1;
     // console.log(Object.keys(creatures));
 
     function handleSubmit(e) {
@@ -36,7 +37,9 @@ export default function MainPage(props) {
             pv: 0
         };
         
-        dispatch(createCreature(creature));
+        // dispatch(createCreature(creature));
+        axios.post("http://localhost:5000/creatures", creature)
+            .then(({ data }) => console.log(data));
         setName("");
     }
 
