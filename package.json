@@ -9,7 +9,8 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "validator": "^12.2.0"
   },
   "devDependencies": {
+    "jest": "^26.0.1",
     "nodemon": "^2.0.2"
   }
 }
