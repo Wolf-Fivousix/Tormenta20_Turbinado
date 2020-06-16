@@ -5,7 +5,7 @@ const creatureReducer = (state = {}, action) => {
     
     switch(action.type) {
         case RECEIVE_NEW_CREATURE:
-            return Object.assign({}, state, action.creature);
+            return Object.assign({}, state, { [action.creature.id]: action.creature });
 
         default:
             return state;
