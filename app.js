@@ -21,15 +21,25 @@ function generateNewId() {
 }
 
 const creatures = {
-    10: {
-        id: 0,
+    1: {
+        id: 1,
         name: "Laura Tumba",
         pv: 666
     },
 };
 
+// Fake database.
+// Anytime the server restarts (that includes nodemon auto refresh) all data resets.
 app.post("/creatures", (request, response) => {
-    console.log(request.body, generateNewId());
+    const { name, pv } = request.body;
+    const newId = generateNewId();
+
+    creatures[newId] = {
+        id: newId,
+        name,
+        pv
+    }
+    
     response.json(creatures);
 });
 
