@@ -8,7 +8,7 @@ const receiveNewCreature = creature => ({
 });
 
 export const createCreature = creature => dispatch => (
-    axios.post("http://localhost:5000/creatures", creature)
+    axios.post("/creatures", creature)
         // Because of the fake DB the data returns as "response.data"
         .then(({ data }) => dispatch(receiveNewCreature(data)))
 );
