@@ -9,7 +9,6 @@ export default function MainPage(props) {
     const names = ["Wolf", "Diego", "Rex"];
     const namePlaceHolder = names[Math.floor(Math.random() * names.length )];
     const [name, setName] = useState("");
-    let creatureCounter = 1;
     // console.log(Object.keys(creatures));
 
     function handleSubmit(e) {
@@ -34,7 +33,6 @@ export default function MainPage(props) {
             // Code snippet from a different project where there is an auto generation of ID based on the latest one:
             // const getNextId = () => _.parseInt( _.maxBy(Object.keys(notes), _.parseInt)) + 1;
 
-            id: creatureCounter,
             name: creatureName,
             pv: 0
         };
@@ -42,8 +40,7 @@ export default function MainPage(props) {
         // dispatch(createCreature(creature));
         axios.post("http://localhost:5000/creatures", creature)
             .then(({ data }) => {
-                console.log(data, creatureCounter);
-                ++creatureCounter;
+                console.log(data);
             });
         setName("");
     }
