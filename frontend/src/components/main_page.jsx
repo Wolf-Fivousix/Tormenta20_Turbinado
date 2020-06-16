@@ -34,12 +34,20 @@ export default function MainPage(props) {
         setPv(e.target.value);
     }
 
+    const temporaryDisplay = Object.values(creatures).map(creature => <li>{`${creature.name}: ${creature.pv}`}</li>)
+    
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>TUDO é Lefeu!!</h1>
-            <input type="text" placeholder={namePlaceHolder} onChange={handleName} value={name}/>
-            <input type="text" placeholder="PV" onChange={handlePv} value={pv}/>
-            <button>Adicionar</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <h1>TUDO é Lefeu!!</h1>
+                <input type="text" placeholder={namePlaceHolder} onChange={handleName} value={name}/>
+                <input type="text" placeholder="PV" onChange={handlePv} value={pv}/>
+                <button>Adicionar</button>
+            </form>
+
+            <ul>
+                {temporaryDisplay}
+            </ul>
+        </div>
     );
 };
