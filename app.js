@@ -40,7 +40,7 @@ app.post("/creatures", (request, response) => {
         pv
     }
     
-    response.json(creatures);
+    response.json(creatures[newId]);
 });
 
 
