@@ -14,8 +14,14 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
+function generateNewId() {
+    const currentIds = Object.keys(creatures);
+
+    return Math.max(...currentIds, currentIds.length) + 1;
+}
+
 const creatures = {
-    0: {
+    10: {
         id: 0,
         name: "Laura Tumba",
         pv: 666
@@ -23,8 +29,7 @@ const creatures = {
 };
 
 app.post("/creatures", (request, response) => {
-    console.log(request.body);
-    // const creature = request.query;
+    console.log(request.body, generateNewId());
     response.json(creatures);
 });
 
