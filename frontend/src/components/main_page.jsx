@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createCreature } from "../actions/creature_actions";
-import axios from "axios";
 
 export default function MainPage(props) {
     const dispatch = useDispatch();
