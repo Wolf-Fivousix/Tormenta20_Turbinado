@@ -20,13 +20,11 @@ export default function MainPage(props) {
             pv
         };
         
-        // dispatch(createCreature(creature));
-        axios.post("http://localhost:5000/creatures", creature)
-            .then(({ data }) => {
-                console.log(data);
+        dispatch(createCreature(creature))
+            .then(() => {
+                setName("");
+                setPv("");
             });
-        setName("");
-        setPv("");
     }
 
     function handleName(e) {
